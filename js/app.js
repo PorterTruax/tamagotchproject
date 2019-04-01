@@ -27,25 +27,43 @@ const game = {
 	},
 	updateTimerDisplay(){
 		console.log(this.timer);
-		$(`<h1>Tamagatch is ${this.timer} minutes old</h1>`).appendTo('#TamagatchiContainerDiv')
+		$('#TamagatchiContainerDiv h1').text(`Tamagatchi is ${this.timer} minutes old`)
 	},
+
+	//the increase time function will impact all of the tamagatchi's qualities 
 	increaseTime: function () {
 		this.timerHandle = setInterval(()=> {
 			this.updateTimerDisplay()
+			this.increaseSleepiness()
+			this.increaseHunger()
+			this.increaseBoredom()
 			this.timer +=1
-		}, 1000)
+
+			if (this.pet.sleepiness === 10 || this.pet.hunger ===10 || this.pet.boredom ===10){
+				console.log("You lose!");
+				$('#TamagatchiContainerDiv h1').remove()
+
+				clearInterval(this.timerHandle)
+			}
+		}, 6000)
 	},
 	increaseSleepiness: function() {
 		this.pet.sleepiness +=1
-		console.log(this.pet.sleepiness);
+		console.log("Tama Sleepiness: "+ this.pet.sleepiness);
 	},
 	increaseHunger: function() {
+
 		this.pet.hunger +=1
-		console.log(this.pet.hunger);
+		console.log("Tama hunger: "+ this.pet.hunger);
 	},
 	increaseBoredom: function(){
 		this.pet.boredom +=1
-		console.log(this.pet.boredom)
+		console.log("Tama boredom: "+ this.pet.boredom)
+	},
+	endGame:function () {
+		if (this.pet.sleepiness === 10) {
+			clearInterval(this.increaseTime)
+		}
 	},
 	feedTama: function () {
 
@@ -67,5 +85,6 @@ $('button').on('click', () => {
 	game.createNewTama(userNameValue)
 	//take the input value and apply it to our Tama
 	game.increaseTime()
+	game.endGame()
 
 })
