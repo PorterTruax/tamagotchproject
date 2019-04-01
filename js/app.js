@@ -24,6 +24,7 @@ const game = {
 		this.pet = new tamagatchiClass
 		this.pet.name = name
 		$(`<h1 id="Tamaname">${this.pet.name}</h1>`).appendTo('body').css('background-color', "pink")
+
 	},
 	updateTimerDisplay(){
 		console.log(this.timer);
@@ -39,21 +40,21 @@ const game = {
 			this.increaseBoredom()
 			this.timer +=1
 
-			if (this.pet.sleepiness === 10 || this.pet.hunger ===10 || this.pet.boredom ===10){
+			if (this.pet.sleepiness >= 10 || this.pet.hunger >= 10 || this.pet.boredom >= 10){
 				console.log("You lose!");
 				$('#TamagatchiContainerDiv h1').remove()
 
 				clearInterval(this.timerHandle)
 			}
-		}, 6000)
+		}, 60000)
 	},
 	increaseSleepiness: function() {
-		this.pet.sleepiness +=1
+		this.pet.sleepiness +=3
 		console.log("Tama Sleepiness: "+ this.pet.sleepiness);
 	},
 	increaseHunger: function() {
 
-		this.pet.hunger +=1
+		this.pet.hunger +=2
 		console.log("Tama hunger: "+ this.pet.hunger);
 	},
 	increaseBoredom: function(){
@@ -66,15 +67,20 @@ const game = {
 		}
 	},
 	feedTama: function () {
-
+		if(10 > this.pet.health > 0){
+			this.pet.hunger -=1
+		}
 	},
 	playWithTama: function() {
-
+		if (10 > this.pet.boredom > 0){
+		this.pet.boredom -= 1
+		}
 	},
 	turnOffTheLights: function() {
-
+		if (10 > this.petsleepiness > 0 ) {
+			this.pet.sleepiness-=1
+		}
 	}
-
 }
 
 // Event Listeners
