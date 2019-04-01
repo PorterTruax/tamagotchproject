@@ -1,0 +1,20 @@
+.headline-container {
+	text-align: center;
+}
+
+#gatchi {
+	color:pink;
+}
+
+.userNameContainer {
+	text-align: center;
+}
+
+#input-name {
+	width: 300px;
+}
+
+#submitUserName {
+	background: red:
+	color: white;
+}
