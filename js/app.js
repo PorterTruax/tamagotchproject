@@ -14,8 +14,12 @@ class tamagatchiClass {
 }
 
 
-// Objects 
+//Initial state
 
+$('#tamagatchiContainerDiv').hide()
+
+
+// Objects 
 const game = {
 	pet: null, 
 	timer:1,
@@ -56,6 +60,11 @@ const game = {
 				}, 5000)
 		}
 	},
+	showTamaDiv(){
+		if (this.gameStarted === true){
+			$('#tamagatchiContainerDiv').show()
+		} 
+	},
 	increaseSleepiness: function() {
 		this.pet.sleepiness +=1
 		$('#tamaSleep').text(`Tama sleepiness: ${this.pet.sleepiness}`)
@@ -68,7 +77,7 @@ const game = {
 	},
 	increaseBoredom: function(){
 		this.pet.boredom +=1
-		$('#TamaBored').text(`Tama boreddom: ${this.pet.boredom}`)
+		$('#tamaBored').text(`Tama boreddom: ${this.pet.boredom}`)
 		console.log("Tama boredom: "+ this.pet.boredom)
 	},
 	feedTama: function () {
@@ -98,7 +107,7 @@ $('#submitUserName').on('click', () => {
 	//grab the input value
 	game.createNewTama(userNameValue)
 	//take the input value and apply it to our Tama
-
+	game.showTamaDiv()
 	game.increaseTime()
 })
 

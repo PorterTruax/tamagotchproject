@@ -1,6 +1,17 @@
 body {
 	background-color: #011A27
 }
+a{
+	text-decoration: none;
+	color: #011A27;
+}
+
+button {
+	border-color: #011A27;
+}
+input {
+	border-color: #011A27;
+}
 
 .headline-container {
 	text-align: center;
@@ -9,9 +20,18 @@ body {
 	color: #E6DF44;
 }
 
+#gatchi {
+	color:pink;
+}
+
 #intro {
 	text-align: left;
 	margin: 0 auto;
+}
+
+#submitUserName{
+	font-family: 'Raleway', sans-serif;
+	background-color: pink
 }
 
 
@@ -24,20 +44,22 @@ body {
 	font-family: 'Fredoka One', cursive;
 }
 
+#tamagatchiContainerDiv button {
+	font-family: 'Fredoka One', cursive;
+}
+
 
 #tamaName {
 	color: #011A27;
 	background-color: pink;
+	text-align: center;
 }
 
-
-
-button {
-	border: solid black;
+.tamaButtons {
+	text-align: center;
 }
-
-#gatchi {
-	color:pink;
+.tamaButtons p{
+	text-align: left;
 }
 
 .userNameContainer {
@@ -47,14 +69,3 @@ button {
 #input-name {
 	width: 300px;
 }
-
-#submitUserName {
-	background: red:
-	color: white;
-}
-
-#Tamaname {
-	display: flex;
-	justify-content: row;
-}
-
