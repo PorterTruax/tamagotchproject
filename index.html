@@ -7,16 +7,28 @@
 </head>
 <body>
 	<div class="headline-container">
-		<h1>Welcome to Tam-a-<span id ="gatchi">gatchi</span></h1>
+		<h1>Tam-a-<span id="gatchi">gatchi</span></h1>
 	</div>
 
-	<div class ="userNameContainer">
+	<div class="userNameContainer">
 		<input type="text" placeholder="What's your Tamagatchi called?" id="input-name">
 		<button type="submit" id="submitUserName">Create Tama!</button>
 	</div>
 
-	<div id="TamagatchiContainerDiv">
-	<h1>Age: Tamagatchi hasn't been born yet!</h1>
+	<div id="tamagatchiContainerDiv">
+		<h1>Age: Tamagatchi hasn't been born yet!</h1>
+
+
+		<div class="tamaButtons">
+			Care for your tama! If its sleepiness, boredom, or hunger become greater than 10, it will have a breakdown!
+			<p>
+			<button type="submit" id="makeTamaSleep"> Make Tama Sleep </button>
+			<button id="feedTama"> Feed Tama </button>
+			<button id="playWithTama"> Play with Tama </button>
+			<ul></ul>
+		</div>
+
+
 	</div>
 
 <script type="text/javascript" src="js/app.js"></script>

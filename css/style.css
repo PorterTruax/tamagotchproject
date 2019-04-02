@@ -1,5 +1,10 @@
 .headline-container {
 	text-align: center;
+	font-size: 35px;
+}
+
+button {
+	border: solid black;
 }
 
 #gatchi {
