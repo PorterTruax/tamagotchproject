@@ -1,8 +1,36 @@
+body {
+	background-color: #011A27
+}
+
 .headline-container {
 	text-align: center;
 	font-size: 35px;
 	font-family: 'Fredoka One', cursive;
+	color: #E6DF44;
 }
+
+#intro {
+	text-align: left;
+	margin: 0 auto;
+}
+
+
+#tamagatchiContainerDiv {
+	color: #E6DF44;
+	font-family: 'Raleway', sans-serif;
+}
+
+#tamagatchiContainerDiv h1 {
+	font-family: 'Fredoka One', cursive;
+}
+
+
+#tamaName {
+	color: #011A27;
+	background-color: pink;
+}
+
+
 
 button {
 	border: solid black;

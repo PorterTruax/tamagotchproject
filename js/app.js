@@ -18,44 +18,43 @@ class tamagatchiClass {
 
 const game = {
 	pet: null, 
-	timer:0,
+	timer:1,
 	timerHandle: null,
+	gameStarted: false,
 	createNewTama: function (name) {
-		this.pet = new tamagatchiClass
-		this.pet.name = name
-		
-		//create headings that update dynamically
-		$(`<h2 id="tamaName">${this.pet.name}</h1>`).appendTo('#tamagatchiContainerDiv').css('background-color', "pink")
-		$(`<h2 id="tamaSleep">Tama sleepiness: ${this.pet.sleepiness}</h1>`).appendTo('#tamagatchiContainerDiv').bind()
-		$(`<h2 id="tamaHunger">Tama hunger: ${this.pet.hunger}</h1>`).appendTo('#tamagatchiContainerDiv')
-		$(`<h2 id="tamaBored">Tama boredom: ${this.pet.boredom}</h1>`).appendTo('#tamagatchiContainerDiv')
-		
+		if (this.gameStarted ===false) { 
+			this.pet = new tamagatchiClass
+			this.pet.name = name
+			//create headings that update dynamically
+			$(`<h2 id="tamaName">${this.pet.name}</h2>`).appendTo('#tamagatchiContainerDiv')
+			$(`<h2 id="tamaSleep">Tama sleepiness: ${this.pet.sleepiness}</h1>`).appendTo('#tamagatchiContainerDiv')
+			$(`<h2 id="tamaHunger">Tama hunger: ${this.pet.hunger}</h1>`).appendTo('#tamagatchiContainerDiv')
+			$(`<h2 id="tamaBored">Tama boredom: ${this.pet.boredom}</h1>`).appendTo('#tamagatchiContainerDiv')
 
-		//buttons that when clicked will impact pet's properties
-
-		// $(`<input type="button" value="MakeTamaSleep" id="sleepTama'> Make Tama Sleep </button>`).appendTo('.tamaButtons')
-
+		}
+		this.gameStarted = true;
 	},
 	updateTimerDisplay(){
 		console.log(this.timer);
 		$('#tamagatchiContainerDiv h1').text(`Tamagatchi is ${this.timer} minutes old`)
 	},
-
 	//the increase time function will impact all of the tamagatchi's qualities 
 	increaseTime: function () {
-		this.timerHandle = setInterval(()=> {
-			this.updateTimerDisplay()
-			this.increaseSleepiness()
-			this.increaseHunger()
-			this.increaseBoredom()
-			this.timer +=1
+		if(this.gameStarted === true){
+				this.timerHandle = setInterval(()=> {
+				this.updateTimerDisplay()
+				this.increaseSleepiness()
+				this.increaseHunger()
+				this.increaseBoredom()
+				this.timer +=1
 
-			if (this.pet.sleepiness >= 10 || this.pet.hunger >= 10 || this.pet.boredom >= 10){
-				console.log("You lose!");
-				$('#tamagatchiContainerDiv h1').text("Your tama is dead! Refresh the page to start again")
-				clearInterval(this.timerHandle)
-			}
-		}, 60000)
+				if (this.pet.sleepiness >= 10 || this.pet.hunger >= 10 || this.pet.boredom >= 10){
+					console.log("You lose!");
+					$('#tamagatchiContainerDiv h1').text("Your tama is dead! Refresh the page to start again")
+					clearInterval(this.timerHandle)
+					}
+				}, 5000)
+		}
 	},
 	increaseSleepiness: function() {
 		this.pet.sleepiness +=1
@@ -72,11 +71,6 @@ const game = {
 		$('#TamaBored').text(`Tama boreddom: ${this.pet.boredom}`)
 		console.log("Tama boredom: "+ this.pet.boredom)
 	},
-	// // endGame:function () {
-	// // 	if (this.pet.sleepiness === 10) {
-	// // 		clearInterval(this.increaseTime)
-	// // 	}
-	// },
 	feedTama: function () {
 		if(10 > this.pet.hunger && this.pet.hunger > 0){
 			this.pet.hunger --
@@ -104,6 +98,7 @@ $('#submitUserName').on('click', () => {
 	//grab the input value
 	game.createNewTama(userNameValue)
 	//take the input value and apply it to our Tama
+
 	game.increaseTime()
 })
 
