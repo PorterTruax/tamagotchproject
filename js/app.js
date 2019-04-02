@@ -55,7 +55,7 @@ const game = {
 				$('#tamagatchiContainerDiv h1').text("Your tama is dead! Refresh the page to start again")
 				clearInterval(this.timerHandle)
 			}
-		}, 5000)
+		}, 60000)
 	},
 	increaseSleepiness: function() {
 		this.pet.sleepiness +=1
