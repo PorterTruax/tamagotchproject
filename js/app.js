@@ -137,7 +137,7 @@ const game = {
 			}, 2000, function(){
 			});
 		}
-		if (this.pet.boredm >= 10){
+		if (this.pet.boredom >= 10){
 			$('img').animate({
 				opacity:0,
 			}, 2000, function(){
