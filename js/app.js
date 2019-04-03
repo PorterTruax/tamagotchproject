@@ -63,7 +63,7 @@ const game = {
 					$('#tamaBored').remove()
 					$('#tamaSleep').remove()
 					}
-				}, 3000)
+				}, 4000)
 		}
 	},
 	showTamaDiv(){
@@ -120,7 +120,7 @@ const game = {
 		} else if (this.timer > 20){
 			// console.log("SHOULD EVOLVE")
 			$('img').attr('src',"images/Tamapics/Mariah_Carey_-_Caution.png")
-			$('.explainerTama').text("Your tama is now in its final, eternal stage. Keep playing if you want to keep nourishing it. Otherwise, you've beat the game. ")
+			$('.explainerTama').text("Your tama is now in its final, eternal stage. Keep playing if you want to keep sustaining it. Otherwise, you've beat the game. ")
 		}
 	},
 	animateTama: function() {
