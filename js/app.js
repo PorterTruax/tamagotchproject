@@ -4,7 +4,7 @@
 
 //We'll need a Tamagatchi class 
 
-class tamagatchiClass {
+class TamagatchiClass {
 	constructor(){
 		this.name = ""
 		this.sleepiness = 0;
@@ -27,7 +27,7 @@ const game = {
 	gameStarted: false,
 	createNewTama: function (name) {
 		if (this.gameStarted === false) { 
-			this.pet = new tamagatchiClass
+			this.pet = new TamagatchiClass
 			this.pet.name = name
 			//create headings that update dynamically
 			$(`<h2 id="tamaName">Your tama's name: ${this.pet.name}</h2>`).appendTo('#tamagatchiContainerDiv')
