@@ -40,7 +40,7 @@ const game = {
 		this.gameStarted = true;
 	},
 	updateTimerDisplay(){
-		console.log(this.timer);
+		// console.log(this.timer);
 		$('#tamagatchiContainerDiv h1').html(`Tamagatchi is <span>${this.timer}</span> tama-years old`)
 	},
 	//the increase time function will impact all of the tamagatchi's qualities 
@@ -56,7 +56,7 @@ const game = {
 				this.timer +=1
 
 				if (this.pet.sleepiness >= 10 || this.pet.hunger >= 10 || this.pet.boredom >= 10){
-					console.log("You lose!");
+					// console.log("You lose!");
 					$('#tamagatchiContainerDiv h1').text("Your tama is dead! Refresh the page to start again")
 					clearInterval(this.timerHandle)
 					$('#tamaHunger').remove()
@@ -74,17 +74,17 @@ const game = {
 	increaseSleepiness: function() {
 		this.pet.sleepiness +=1
 		$('#tamaSleep').text(`Tama sleepiness: ${this.pet.sleepiness}`)
-		console.log("Tama Sleepiness: "+ this.pet.sleepiness);
+		// console.log("Tama Sleepiness: "+ this.pet.sleepiness);
 	},
 	increaseHunger: function() {
 		this.pet.hunger +=1
 		$('#tamaHunger').text(`Tama hunger: ${this.pet.hunger}`)
-		console.log("Tama hunger: "+ this.pet.hunger);
+		// console.log("Tama hunger: "+ this.pet.hunger);
 	},
 	increaseBoredom: function(){
 		this.pet.boredom +=1
 		$('#tamaBored').text(`Tama boredom: ${this.pet.boredom}`)
-		console.log("Tama boredom: "+ this.pet.boredom)
+		// console.log("Tama boredom: "+ this.pet.boredom)
 	},
 	feedTama: function () {
 		if(10 > this.pet.hunger && this.pet.hunger > 0){
@@ -106,19 +106,19 @@ const game = {
 	},
 	tamaEvolution: function() {
 		if (this.timer > 5 && this.timer <10) {
-			console.log("SHOULD EVOLVE");
+			// console.log("SHOULD EVOLVE");
 			$('#tamaOne').attr('src', "images/Tamapics/2.jpg")
 			$('.explainerTama').text("Your tama has evolved! Into adolesence! Smoking cigarettes and drinking budweiser with Steve from two doors down, you're at a loss for what to do. Hang in there! You can nourish this Tama to adulthood!")
 		} else if (game.timer > 10 && game.timer < 15) {
-			console.log("SHOULD EVOLVE")
+			// console.log("SHOULD EVOLVE")
 			$('img').attr('src', "images/Tamapics/3.jpg")
 			$('.explainerTama').text("Hooray! You've made it out of adolesence and into adulthood. Your tama now owns a car and has a dog.")
 		} else if (this.timer > 15 && this.timer <20){
-			console.log("SHOULD EVOLVE")
+			// console.log("SHOULD EVOLVE")
 			$('img').attr('src',"images/Tamapics/4.jpg")
 			$('.explainerTama').text("Alas, all good things come to an end. No matter what you do! Your tama will cease to exist pretty soon. But that doesn't mean you shouldn't keep nourishing it!")
 		} else if (this.timer > 20){
-			console.log("SHOULD EVOLVE")
+			// console.log("SHOULD EVOLVE")
 			$('img').attr('src',"images/Tamapics/Mariah_Carey_-_Caution.png")
 			$('.explainerTama').text("Your tama is now in its final, eternal stage. Keep playing if you want to keep nourishing it. Otherwise, you've beat the game. ")
 		}
@@ -168,17 +168,17 @@ $('#submitUserName').on('click', () => {
 
 
 $('#makeTamaSleep').on('click', () => {
-	console.log("You're clicking make tama sleep");
+	// console.log("You're clicking make tama sleep");
 	game.turnOffTheLights();
 })
 
 $('#feedTama').on('click',() => {
-	console.log("Youre clicking feedtama");
+	// console.log("Youre clicking feedtama");
 	game.feedTama()
 })
 
 $('#playWithTama').on('click',() => {
-	console.log("youre clicking playwith tama");
+	// console.log("youre clicking playwith tama");
 	game.playWithTama()
 })
 
