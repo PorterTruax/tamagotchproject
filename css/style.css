@@ -1,5 +1,6 @@
 body {
-	background-color: #011A27
+	background-color: #011A27;
+	margin: 0 auto;
 }
 a{
 	text-decoration: none;
@@ -11,6 +12,16 @@ button {
 }
 input {
 	border-color: #011A27;
+}
+
+span {
+	color:pink;
+}
+
+img {
+	border-radius: 15px;
+	float: right;
+	height: 400px;
 }
 
 .headline-container {
@@ -29,11 +40,24 @@ input {
 	margin: 0 auto;
 }
 
-#submitUserName{
-	font-family: 'Raleway', sans-serif;
-	background-color: pink
+
+#input-name {
+	width: 500px;
+	height: 50px;
+	font-size: 25px;
 }
 
+
+#submitUserName{
+	font-family: 'Raleway', sans-serif;
+	background-color: pink;
+	height: 50px;
+}
+
+.userNameContainer{
+	display:flex;
+	align-items: center;
+}
 
 #tamagatchiContainerDiv {
 	color: #E6DF44;
@@ -62,10 +86,17 @@ input {
 	text-align: left;
 }
 
-.userNameContainer {
-	text-align: center;
+.tamaButtons div{
+	display: flex;
+	justify-content: space-around;
 }
 
-#input-name {
-	width: 300px;
+.tamaButtons button{
+	height: 75px;
+	width:100px;
+	background-color: #F0810F;
+}
+
+.userNameContainer {
+	text-align: center;
 }

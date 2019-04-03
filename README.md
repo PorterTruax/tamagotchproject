@@ -8,9 +8,10 @@ Requirements
 Create a repo for your tomagotchi pet
 make a commit after you finish each one of the following
 
-Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
+Create a Class (JS Class, look at your notes if your forget) for your tomagotchi //Done
 
 Instatiate your Tomagotchi
+//Done
 
 Display a character of your choice on the screen to represent your pet
 
