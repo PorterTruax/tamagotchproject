@@ -52,7 +52,6 @@ const game = {
 				this.increaseHunger()
 				this.increaseBoredom()
 				this.tamaEvolution()
-				this.makeTamaSkinny()
 				this.animateTama()
 				this.timer +=1
 
