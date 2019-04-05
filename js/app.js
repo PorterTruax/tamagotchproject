@@ -63,7 +63,7 @@ const game = {
 					$('#tamaBored').remove()
 					$('#tamaSleep').remove()
 					}
-				}, 4000)
+				}, 3000)
 		}
 	},
 	showTamaDiv(){
@@ -105,19 +105,19 @@ const game = {
 		}
 	},
 	tamaEvolution: function() {
-		if (this.timer > 5 && this.timer <10) {
+		if (this.timer > 5 && this.timer <12) {
 			// console.log("SHOULD EVOLVE");
 			$('#tamaOne').attr('src', "images/Tamapics/2.jpg")
 			$('.explainerTama').text("Your tama has evolved! Into adolesence! Smoking cigarettes and drinking budweiser with Steve from two doors down, you're at a loss for what to do. Hang in there! You can nourish this Tama to adulthood!")
-		} else if (game.timer > 10 && game.timer < 15) {
+		} else if (game.timer > 12 && game.timer < 17) {
 			// console.log("SHOULD EVOLVE")
 			$('img').attr('src', "images/Tamapics/3.jpg")
 			$('.explainerTama').text("Hooray! You've made it out of adolesence and into adulthood. Your tama now owns a car and has a dog.")
-		} else if (this.timer > 15 && this.timer <20){
+		} else if (this.timer > 17 && this.timer <23){
 			// console.log("SHOULD EVOLVE")
 			$('img').attr('src',"images/Tamapics/4.jpg")
 			$('.explainerTama').text("Alas, all good things come to an end. No matter what you do! Your tama will cease to exist pretty soon. But that doesn't mean you shouldn't keep nourishing it!")
-		} else if (this.timer > 20){
+		} else if (this.timer > 23){
 			// console.log("SHOULD EVOLVE")
 			$('img').attr('src',"images/Tamapics/Mariah_Carey_-_Caution.png")
 			$('.explainerTama').text("Your tama is now in its final, eternal stage. Keep playing if you want to keep sustaining it. Otherwise, you've beat the game. ")
